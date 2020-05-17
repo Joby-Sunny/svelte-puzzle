@@ -1,0 +1,21 @@
+/* To wrap the application */
+.app-wrapper {
+  height: calc(100vh - 70px);
+}
+
+.brick-wrapper {
+  width: 110px;
+  height: 110px;
+  padding: 0px;
+  margin: 0px;
+  border: 1px solid aqua;
+}
+.brick-image {
+  width: 100%;
+  height: 100%;
+}
+
+.image-grid {
+    height: 440px;
+    width: 440px;
+}

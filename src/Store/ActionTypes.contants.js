@@ -1,0 +1,2 @@
+export const SET_USER_PUZZLE = 'SET_USER_PUZZLE';
+export const SET_BRICK_SELECTED = 'SET_BRICK_SELECTED';
