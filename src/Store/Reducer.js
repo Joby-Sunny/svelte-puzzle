@@ -1,9 +1,12 @@
 import {writable} from 'svelte/store';
-import {SET_USER_PUZZLE, SET_BRICK_SELECTED} from './ActionTypes.contants';
-import {setUserPuzzle, selectBrick} from './Helper';
+import {
+  SET_USER_PUZZLE,
+  SET_BRICK_SELECTED,
+  UPDATE_BRICK_POSITION,
+} from './ActionTypes.contants';
+import {setUserPuzzle, selectBrick, updateBrickPosition} from './Helper';
 
 const INITIAL_STATE = {
-  count: 0,
   puzzleId: null,
   puzzleName: '',
   puzzleSource: '',
@@ -19,6 +22,8 @@ function UpdateStore(action) {
         return setUserPuzzle(state, action.payload);
       case SET_BRICK_SELECTED:
         return selectBrick(state, action.payload);
+      case UPDATE_BRICK_POSITION:
+        return updateBrickPosition(state, action.payload);
       default:
         return state;
     }

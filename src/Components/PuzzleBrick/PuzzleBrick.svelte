@@ -44,7 +44,7 @@
 
   function brickMove(event) {
     if (KEY_CODES.VALID.includes(event.keyCode)) {
-      moveBrick(KEY_CODES[event.keyCode]);
+      moveBrick({direction: KEY_CODES[event.keyCode], id: brick.id});
     }
     if (KEY_CODES.ENTER_KEY === event.keyCode) {
       selectBrick(brick.id);

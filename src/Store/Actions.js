@@ -16,7 +16,6 @@ export function selectBrick(id) {
   Reducer.UpdateStore(withType(SET_BRICK_SELECTED, {id}));
 }
 
-export function moveBrick(direction) {
-  debugger
-  Reducer.UpdateStore(withType(UPDATE_BRICK_POSITION, direction));
+export function moveBrick(params) {
+  Reducer.UpdateStore(withType(UPDATE_BRICK_POSITION, params));
 }
