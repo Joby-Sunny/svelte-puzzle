@@ -1,5 +1,9 @@
 import {Reducer} from './Reducer';
-import {SET_USER_PUZZLE, SET_BRICK_SELECTED} from './ActionTypes.contants';
+import {
+  SET_USER_PUZZLE,
+  SET_BRICK_SELECTED,
+  UPDATE_BRICK_POSITION,
+} from './ActionTypes.contants';
 import {PuzzleOne} from '../Data';
 
 const withType = (type, payload) => ({type, payload});
@@ -10,4 +14,9 @@ export function setPuzzle() {
 
 export function selectBrick(id) {
   Reducer.UpdateStore(withType(SET_BRICK_SELECTED, {id}));
+}
+
+export function moveBrick(direction) {
+  debugger
+  Reducer.UpdateStore(withType(UPDATE_BRICK_POSITION, direction));
 }

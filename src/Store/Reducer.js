@@ -3,13 +3,14 @@ import {SET_USER_PUZZLE, SET_BRICK_SELECTED} from './ActionTypes.contants';
 import {setUserPuzzle, selectBrick} from './Helper';
 
 const INITIAL_STATE = {
+  count: 0,
   puzzleId: null,
   puzzleName: '',
   puzzleSource: '',
   puzzleQuestion: [],
 };
 
-const {update, subscribe} = writable(INITIAL_STATE);
+const {update, subscribe, set} = writable(INITIAL_STATE);
 
 function UpdateStore(action) {
   update((state) => {
@@ -24,4 +25,4 @@ function UpdateStore(action) {
   });
 }
 
-export const Reducer = {UpdateStore, subscribe};
+export const Reducer = {UpdateStore, subscribe, set};
