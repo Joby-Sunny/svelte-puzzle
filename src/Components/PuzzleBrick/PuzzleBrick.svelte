@@ -1,4 +1,5 @@
 <script>
+  import {afterUpdate} from 'svelte';
   import {selectBrick, moveBrick} from '../../Store';
   export let brick;
   const KEY_CODES = {
@@ -9,6 +10,12 @@
     39: 'ARROW-RIGHT',
     40: 'ARROW-DOWN',
   };
+
+  afterUpdate(() => {
+    if (brick.selected === true) {
+      document.querySelector('div.border-4.border-yellow-600').focus();
+    }
+  });
 
   function setWrapperClass(brick) {
     let wrapperClassList = ['w-full'];
@@ -43,6 +50,7 @@
   }
 
   function brickMove(event) {
+    event.preventDefault();
     if (KEY_CODES.VALID.includes(event.keyCode)) {
       moveBrick({direction: KEY_CODES[event.keyCode], id: brick.id});
     }
