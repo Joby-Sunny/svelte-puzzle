@@ -1,76 +1,21 @@
-export function setUserPuzzle(state, payload) {
-  return {
-    ...state,
-    puzzleId: payload.id,
-    puzzleImage: payload.title,
-    puzzleSource: payload.sourceImage,
-    puzzleQuestion: setCurrentBrickPosition(
-      shuffleBricks(setPayloadQuestion(payload))
-    ),
-  };
-}
-
-function setPayloadQuestion(payload) {
-  return payload.imageFragments.map((image, index) => {
-    let attrib = {
-      visible: true,
-      correct: false,
-      selected: false,
-      currentPosition: index,
-    };
-    if (image.actualPosition === payload.hideItem) {
-      attrib.visible = false;
-    }
-    return {...image, ...attrib};
-  });
-}
-
-function shuffleBricks(puzzleQuestion) {
-  let current = puzzleQuestion.length;
-  while (current > 0) {
-    let toIndex = Math.floor(Math.random() * current);
-    let temp = {};
-    current -= 1;
-    temp = puzzleQuestion[toIndex];
-    puzzleQuestion[toIndex] = puzzleQuestion[current];
-    puzzleQuestion[current] = temp;
-  }
-  return puzzleQuestion;
-}
-
-function setCurrentBrickPosition(puzzleQuestion) {
-  return puzzleQuestion.map((brick, index) => {
-    brick.currentPosition = index;
-    return brick;
-  });
-}
-
-export function selectBrick(state, payload) {
-  return {
-    ...state,
-    puzzleQuestion: setBrickSelected(state.puzzleQuestion, payload),
-  };
-}
-
-function setBrickSelected(puzzleQuestion, payload) {
-  return puzzleQuestion.map((image) => {
-    const update = {...image};
-    if (update.id === payload.id) {
-      update.selected = true;
-    } else {
-      update.selected = false;
-    }
-    return update;
-  });
-}
-
+import {setCurrentBrickPosition} from './utils';
 const COL_MAX_LIMIT = 4;
 const COL_MIN_LIMIT = -1;
+
 export function updateBrickPosition(state, payload) {
   return {
     ...state,
     puzzleQuestion: setCurrentBrickPosition(
       moveBrick(state.puzzleQuestion, payload)
+    ),
+  };
+}
+
+export function dragDropBrick(state, payload) {
+  return {
+    ...state,
+    puzzleQuestion: setCurrentBrickPosition(
+      moveByDragDrop(state.puzzleQuestion, payload)
     ),
   };
 }
@@ -83,6 +28,20 @@ function moveBrick(puzzleQuestion, payload) {
     payload.direction
   );
   if (isTargetPositionFeasible(puzzleGrid, targetPosition)) {
+    puzzleGrid = changeBrickPosition(
+      puzzleGrid,
+      sourcePosition,
+      targetPosition
+    );
+  }
+  return puzzleGrid.flat();
+}
+
+function moveByDragDrop(puzzleQuestion, payload) {
+  let puzzleGrid = makePuzzleGrid(puzzleQuestion);
+  const sourcePosition = getCurrentGridPosition(puzzleGrid, payload.id);
+  const targetPosition = getEmptyGridPostion(puzzleGrid);
+  if (isDragDropValid(sourcePosition, targetPosition)) {
     puzzleGrid = changeBrickPosition(
       puzzleGrid,
       sourcePosition,
@@ -163,4 +122,32 @@ function changeBrickPosition(puzzleGrid, source, target) {
   puzzleGrid[source.row][source.column] = puzzleGrid[target.row][target.column];
   puzzleGrid[target.row][target.column] = temp;
   return puzzleGrid;
+}
+
+function getEmptyGridPostion(puzzleGrid) {
+  return puzzleGrid.reduce(
+    (position, gridRow, rowNumber) => {
+      let gridColumn = gridRow.findIndex((col) => col.visible === false);
+      if (gridColumn > -1) {
+        position.row = rowNumber;
+        position.column = gridColumn;
+      }
+      return position;
+    },
+    {row: 0, column: 0}
+  );
+}
+
+function isDragDropValid(sourcePosition, targetPosition) {
+  const columDifference = Math.abs(
+    sourcePosition.column - targetPosition.column
+  );
+  const rowDifference = Math.abs(sourcePosition.row - targetPosition.row);
+  if (columDifference === 0 && rowDifference === 1) {
+    return true;
+  } else if (columDifference === 1 && rowDifference === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }

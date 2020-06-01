@@ -1,6 +1,6 @@
 <script>
   import {afterUpdate} from 'svelte';
-  import {selectBrick, moveBrick} from '../../Store';
+  import {selectBrick, moveBrick, dragDropBrick} from '../../Store';
   export let brick;
   const KEY_CODES = {
     ENTER_KEY: 13,
@@ -20,11 +20,7 @@
   function setWrapperClass(brick) {
     let wrapperClassList = ['w-full'];
     if (brick.visible === false) {
-      wrapperClassList = [
-        ...wrapperClassList,
-        'invisible',
-        'pointer-events-none',
-      ];
+      wrapperClassList = [...wrapperClassList, 'border-green-300', 'border'];
     } else {
       wrapperClassList = [...wrapperClassList, 'cursor-pointer'];
     }
@@ -58,17 +54,40 @@
       selectBrick(brick.id);
     }
   }
+
+  function onDragStart(event) {
+    event.dataTransfer.setData('id', brick.id);
+  }
+
+  function onDragOver(event) {
+    event.preventDefault();
+  }
+
+  function onDrop(event) {
+    event.preventDefault();
+    dragDropBrick({id: event.dataTransfer.getData('id')});
+  }
 </script>
 
 <style>
 
 </style>
 
-<div
-  tabindex={brickTabIndex(brick)}
-  class={setWrapperClass(brick)}
-  draggable="false"
-  on:keyup={brickMove}
-  on:click={brickClick}>
-  <img class="brick-image" src={brick.src} alt={brick.id} />
-</div>
+{#if brick.visible === true}
+  <div
+    tabindex={brickTabIndex(brick)}
+    class={setWrapperClass(brick)}
+    draggable="true"
+    on:dragstart={onDragStart}
+    on:keyup={brickMove}
+    on:click={brickClick}>
+    <img class="brick-image" src={brick.src} alt={brick.id} />
+  </div>
+{:else}
+  <div
+    tabindex={brickTabIndex(brick)}
+    class={setWrapperClass(brick)}
+    draggable="false"
+    on:dragover={onDragOver}
+    on:drop={onDrop} />
+{/if}

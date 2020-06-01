@@ -3,8 +3,14 @@ import {
   SET_USER_PUZZLE,
   SET_BRICK_SELECTED,
   UPDATE_BRICK_POSITION,
+  DROP_BRICK_POSTITION,
 } from './ActionTypes.contants';
-import {setUserPuzzle, selectBrick, updateBrickPosition} from './Helper';
+import {
+  setUserPuzzle,
+  selectBrick,
+  updateBrickPosition,
+  dragDropBrick,
+} from './Helpers';
 
 const INITIAL_STATE = {
   puzzleId: null,
@@ -24,6 +30,8 @@ function UpdateStore(action) {
         return selectBrick(state, action.payload);
       case UPDATE_BRICK_POSITION:
         return updateBrickPosition(state, action.payload);
+      case DROP_BRICK_POSTITION:
+        return dragDropBrick(state, action.payload);
       default:
         return state;
     }
