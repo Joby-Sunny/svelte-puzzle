@@ -10,7 +10,7 @@
 </style>
 
 <Header />
-<div class="app-wrapper bg-blue-100">
+<div class="app-wrapper">
   <Router>
     <Route path={Routes.play} component={Playground} />
     <Route path={Routes.home} component={Playground} />
