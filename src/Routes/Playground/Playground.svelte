@@ -29,6 +29,6 @@
     </div>
   </div>
   <div class="puzzle-info">
-    <h3>Info Section</h3>
+    <h3>Information Section</h3>
   </div>
 </div>
