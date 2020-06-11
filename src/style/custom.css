@@ -3,7 +3,10 @@
 body {
   margin:0px;
   padding: 0px;
-  background: linear-gradient(45deg, rgba(220,0,0,0.6),rgba(0,0,220,0.6));
+  background: linear-gradient(45deg, rgba(220,0,0,0.6),rgba(0,0,220,0.6)),url('https://pbs.twimg.com/media/DtgW3TwX4AEeMMr.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /* app-header */
 .app-header {
@@ -18,16 +21,86 @@ body {
 .app-header__title {
   font-size: 48px;
   font-family: 'Piedra',cursive;
-  background: linear-gradient(45deg, rgba(220,0,0,0.6),rgba(0,0,220,0.6));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  color: #fff;
+  opacity: 0.8;
+}
+.app-header__title:hover {
+  opacity: 1;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  transition: 0.7s;
 }
 /* To wrap the application */
 .app-wrapper {
   height: calc(100vh - 70px);
 }
 
+/* style for homepage */
+.homepage {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  align-items: center;
+}
+
+.homepage h2 {
+  font-family: 'Piedra',cursive;
+  font-size: 98px;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.homepage h2:hover {
+  opacity: 1;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  transition: 0.7s;
+}
+
+.homepage h4 {
+  font-family: sans-serif;
+  font-size: 50px;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.homepage h4:hover {
+  opacity: 1;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  transition: 0.7s;
+}
+
+.homepage h6 {
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.homepage h6:hover {
+  opacity: 1;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  transition: 0.7s;
+}
+
+.homepage a {
+  color: white;
+  cursor: pointer;
+  font-size: 28px;
+  margin-top: 12px;
+  padding: 15px 65px;
+  border: 3px solid;
+  opacity: 0.6;
+}
+
+.homepage a:hover {
+  background: linear-gradient(45deg, rgba(220,0,0,0.6),rgba(0,0,220,0.6));
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  transition: 0.7s;
+}
+
+
+/* Style for playground */
 .playground {
   display: flex;
   flex-grow: 1;

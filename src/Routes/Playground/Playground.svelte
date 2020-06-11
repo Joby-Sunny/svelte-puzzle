@@ -1,6 +1,7 @@
 <script>
   import {onMount} from 'svelte';
   import PuzzleBrick from '../../Components/PuzzleBrick/PuzzleBrick.svelte';
+  import PuzzleInfo from '../../Components/PuzzleInfo/PuzzleInfo.svelte';
   import {setPuzzle, store} from '../../Store';
   export let location;
   onMount(() => {
@@ -28,7 +29,5 @@
       {/if}
     </div>
   </div>
-  <div class="puzzle-info">
-    <h3>Information Section</h3>
-  </div>
+  <PuzzleInfo />
 </div>
