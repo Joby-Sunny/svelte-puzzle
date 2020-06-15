@@ -1,0 +1,28 @@
+.puzzle-info {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    padding: 32px;
+}
+
+.puzzle-info .puzzle-info__title {
+    font-size: 32px;
+    display:flex;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.puzzle-info .puzzle-info__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.puzzle-info .puzzle-info__details img {
+    width: 180px;
+    height: 180px;
+    margin-top: 20px;
+    border: 2px solid red;
+}

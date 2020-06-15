@@ -16,7 +16,7 @@
 </style>
 
 <div class="playground">
-  <div class="puzzle-question">
+  <div class="puzzle-question w-7/12">
     <div class="puzzle-question__wrap">
       {#if $store.puzzleId}
         <div class="question-grid grid gap-0 grid-cols-4">
