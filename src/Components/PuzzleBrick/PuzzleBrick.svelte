@@ -13,22 +13,22 @@
 
   afterUpdate(() => {
     if (brick.selected === true) {
-      document.querySelector('div.border-4.border-yellow-600').focus();
+      document.querySelector('div.brick-visible.brick-selected').focus();
     }
   });
 
   function setWrapperClass(brick) {
-    let wrapperClassList = ['w-full'];
+    let wrapperClassList = [];
     if (brick.visible === false) {
-      wrapperClassList = [...wrapperClassList, 'border-green-300', 'border'];
+      wrapperClassList = [...wrapperClassList, 'brick-hidden'];
     } else {
-      wrapperClassList = [...wrapperClassList, 'cursor-pointer'];
+      wrapperClassList = [...wrapperClassList, 'brick-visible'];
     }
     if (brick.selected === true && brick.visible === true) {
-      wrapperClassList = [...wrapperClassList, 'border-4', 'border-yellow-600'];
+      wrapperClassList = [...wrapperClassList, 'brick-selected'];
     }
     if (brick.selected === false && brick.visible === true) {
-      wrapperClassList = [...wrapperClassList, 'border', 'border-blue-100'];
+      wrapperClassList = [...wrapperClassList, 'brick-normal'];
     }
     return wrapperClassList.join(' ');
   }

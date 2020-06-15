@@ -2,6 +2,7 @@
 @import './homePage.css';
 @import './puzzleInfo.css';
 @import './puzzleQuestion.css';
+@import './puzzleBrick.css';
 
 body {
   margin:0px;

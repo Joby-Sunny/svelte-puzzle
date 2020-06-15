@@ -24,5 +24,6 @@
     width: 180px;
     height: 180px;
     margin-top: 20px;
-    border: 2px solid red;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow : 2px 2px 5px rgba(0, 0, 0, 0.8);
 }

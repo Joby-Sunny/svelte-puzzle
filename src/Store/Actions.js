@@ -4,6 +4,7 @@ import {
   SET_BRICK_SELECTED,
   UPDATE_BRICK_POSITION,
   DROP_BRICK_POSTITION,
+  UPDATE_PUZZLE_STATE,
 } from './ActionTypes.contants';
 import {PuzzleOne} from '../Data';
 
@@ -23,4 +24,8 @@ export function moveBrick(params) {
 
 export function dragDropBrick(params) {
   Reducer.UpdateStore(withType(DROP_BRICK_POSTITION, params));
+}
+
+export function updatePuzzleState(params) {
+  Reducer.UpdateStore(withType(UPDATE_PUZZLE_STATE, params));
 }

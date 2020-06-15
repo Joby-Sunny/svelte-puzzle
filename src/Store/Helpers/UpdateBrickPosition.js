@@ -1,22 +1,38 @@
-import {setCurrentBrickPosition} from './utils';
+import {
+  setCurrentBrickPosition,
+  getTotalMoves,
+  updatePreviousState,
+} from './utils';
 const COL_MAX_LIMIT = 4;
 const COL_MIN_LIMIT = -1;
 
 export function updateBrickPosition(state, payload) {
+  payload.brickMoved = false;
+  const puzzleQuestion = setCurrentBrickPosition(
+    moveBrick(state.puzzleQuestion, payload)
+  );
+  const totalMoves = getTotalMoves(state.totalMoves, payload.brickMoved);
+  const recentMoves = updatePreviousState(state, payload.brickMoved);
   return {
     ...state,
-    puzzleQuestion: setCurrentBrickPosition(
-      moveBrick(state.puzzleQuestion, payload)
-    ),
+    puzzleQuestion,
+    totalMoves,
+    recentMoves,
   };
 }
 
 export function dragDropBrick(state, payload) {
+  payload.brickMoved = false;
+  const puzzleQuestion = setCurrentBrickPosition(
+    moveByDragDrop(state.puzzleQuestion, payload)
+  );
+  const totalMoves = getTotalMoves(state.totalMoves, payload.brickMoved);
+  const recentMoves = updatePreviousState(state, payload.brickMoved);
   return {
     ...state,
-    puzzleQuestion: setCurrentBrickPosition(
-      moveByDragDrop(state.puzzleQuestion, payload)
-    ),
+    totalMoves,
+    recentMoves,
+    puzzleQuestion,
   };
 }
 
@@ -33,6 +49,7 @@ function moveBrick(puzzleQuestion, payload) {
       sourcePosition,
       targetPosition
     );
+    payload.brickMoved = true;
   }
   return puzzleGrid.flat();
 }
@@ -47,6 +64,7 @@ function moveByDragDrop(puzzleQuestion, payload) {
       sourcePosition,
       targetPosition
     );
+    payload.brickMoved = true;
   }
   return puzzleGrid.flat();
 }
