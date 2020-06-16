@@ -1,23 +1,18 @@
 <script>
+  import PuzzleDetails from '../PuzzleDetails/PuzzleDetails.svelte';
+  import PuzzleComplete from '../PuzzleComplete/PuzzleComplete.svelte';
   import {setPuzzle, store} from '../../Store';
-  let puzzleTitle, puzzleImage;
-  $: puzzleImage = $store.puzzleSource;
-  $: puzzleTile = $store.puzzleImage;
-  $: totalMoves = $store.totalMoves;
-  $: recentMoves = $store.recentMoves;
+
+  let puzzleComplete;
+
+  $: puzzleComplete = $store.puzzleComplete;
 </script>
 
 <div class="puzzle-info w-4/12">
-  <h3 class="puzzle-info__title">Information Section</h3>
-  <div class="puzzle-info__details">
-    <img src={puzzleImage} alt={puzzleTile} />
-    <span>Total Moves: {totalMoves}</span>
-    <ul class="previousMoves">
-      {#each recentMoves as move, key}
-        <li {key} class="previousMoves-item">
-          {key + 1} {`Move No: ${move.id}`}
-        </li>
-      {/each}
-    </ul>
-  </div>
+  <h3 class="puzzle-info__title">Puzzle Details</h3>
+  {#if puzzleComplete}
+    <PuzzleComplete />
+  {:else}
+    <PuzzleDetails />
+  {/if}
 </div>

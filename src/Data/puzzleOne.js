@@ -22,9 +22,9 @@ export const PuzzleOne = {
   sourceImage,
   imageFragments: [
     {
-      actualPosition: 0,
-      id: '5103677e-408e-488b-b2a7-716d014b0e91',
-      src: image0,
+      actualPosition: 14,
+      id: '00f78b1a-c562-4ccf-bf36-f665cab20396',
+      src: image14,
     },
     {
       actualPosition: 1,
@@ -32,9 +32,9 @@ export const PuzzleOne = {
       src: image1,
     },
     {
-      actualPosition: 2,
-      id: '5137a9c0-9486-4696-83ec-c817c47f0a02',
-      src: image2,
+      actualPosition: 10,
+      id: '5bf4c40d-dbea-406f-814e-d78bba619ec4',
+      src: image10,
     },
     {
       actualPosition: 3,
@@ -42,29 +42,14 @@ export const PuzzleOne = {
       src: image3,
     },
     {
+      actualPosition: 13,
+      id: 'bcf98697-52f7-4d00-b7a5-056a692ad7f6',
+      src: image13,
+    },
+    {
       actualPosition: 4,
       id: '710248bb-feef-4c98-b944-4bd5a6250e16',
       src: image4,
-    },
-    {
-      actualPosition: 5,
-      id: 'ced982af-83dd-4279-8f98-5fd47cc18078',
-      src: image5,
-    },
-    {
-      actualPosition: 6,
-      id: 'edd2c85e-fc34-4202-a261-5b9099c87ab4',
-      src: image6,
-    },
-    {
-      actualPosition: 7,
-      id: 'b65c2876-e8e4-4de6-b161-c2c59797e080',
-      src: image7,
-    },
-    {
-      actualPosition: 8,
-      id: '46d7e7fe-1501-4cc8-bc37-cfd970210c7b',
-      src: image8,
     },
     {
       actualPosition: 9,
@@ -72,9 +57,24 @@ export const PuzzleOne = {
       src: image9,
     },
     {
-      actualPosition: 10,
-      id: '5bf4c40d-dbea-406f-814e-d78bba619ec4',
-      src: image10,
+      actualPosition: 8,
+      id: '46d7e7fe-1501-4cc8-bc37-cfd970210c7b',
+      src: image8,
+    },
+    {
+      actualPosition: 7,
+      id: 'b65c2876-e8e4-4de6-b161-c2c59797e080',
+      src: image7,
+    },
+    {
+      actualPosition: 6,
+      id: 'edd2c85e-fc34-4202-a261-5b9099c87ab4',
+      src: image6,
+    },
+    {
+      actualPosition: 5,
+      id: 'ced982af-83dd-4279-8f98-5fd47cc18078',
+      src: image5,
     },
     {
       actualPosition: 11,
@@ -82,19 +82,19 @@ export const PuzzleOne = {
       src: image11,
     },
     {
+      actualPosition: 2,
+      id: '5137a9c0-9486-4696-83ec-c817c47f0a02',
+      src: image2,
+    },
+    {
       actualPosition: 12,
       id: 'b7400bc7-76fb-42d5-b52a-f65812a6bb31',
       src: image12,
     },
     {
-      actualPosition: 13,
-      id: 'bcf98697-52f7-4d00-b7a5-056a692ad7f6',
-      src: image13,
-    },
-    {
-      actualPosition: 14,
-      id: '00f78b1a-c562-4ccf-bf36-f665cab20396',
-      src: image14,
+      actualPosition: 0,
+      id: '5103677e-408e-488b-b2a7-716d014b0e91',
+      src: image0,
     },
     {
       actualPosition: 15,

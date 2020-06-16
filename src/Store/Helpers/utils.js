@@ -24,6 +24,6 @@ export function updatePreviousState(state, moved) {
 
 function limitRecentMovesListSize(recentMoves) {
   const START_INDEX = 0,
-    LIMIT_INDEX = 8;
+    LIMIT_INDEX = 25;
   return recentMoves.slice(START_INDEX, LIMIT_INDEX);
 }

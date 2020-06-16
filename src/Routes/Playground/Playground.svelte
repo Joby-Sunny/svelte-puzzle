@@ -3,7 +3,6 @@
   import PuzzleBrick from '../../Components/PuzzleBrick/PuzzleBrick.svelte';
   import PuzzleInfo from '../../Components/PuzzleInfo/PuzzleInfo.svelte';
   import {setPuzzle, store} from '../../Store';
-  export let location;
   onMount(() => {
     setPuzzle();
   });

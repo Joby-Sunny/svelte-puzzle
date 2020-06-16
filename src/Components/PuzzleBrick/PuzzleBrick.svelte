@@ -75,7 +75,7 @@
 
 {#if brick.visible === true}
   <div
-    tabindex={brickTabIndex(brick)}
+    tabindex="0"
     class={setWrapperClass(brick)}
     draggable="true"
     on:dragstart={onDragStart}
@@ -85,7 +85,6 @@
   </div>
 {:else}
   <div
-    tabindex={brickTabIndex(brick)}
     class={setWrapperClass(brick)}
     draggable="false"
     on:dragover={onDragOver}

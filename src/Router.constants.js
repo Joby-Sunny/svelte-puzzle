@@ -1,4 +1,5 @@
 export const Routes = {
-  home: "/",
-  play: "/play",
+  home: '/',
+  play: '/play',
+  playRoute: '#/play',
 };

@@ -21,18 +21,18 @@ const INITIAL_STATE = {
   puzzleQuestion: [],
   totalMoves: 0,
   recentMoves: [],
+  puzzleComplete: false,
 };
 
 const {update, subscribe, set} = writable(INITIAL_STATE);
 
 function UpdateStore(action) {
-  update((state) => MainReducer(state, action));
+  update((state) => CheckIfUserWon(MainReducer(state, action)));
 }
 
 export const Reducer = {UpdateStore, subscribe, set};
 
 function MainReducer(state, action) {
-  console.log(state);
   switch (action.type) {
     case SET_USER_PUZZLE:
       return setUserPuzzle(state, action.payload);
@@ -47,4 +47,25 @@ function MainReducer(state, action) {
     default:
       return {...state};
   }
+}
+
+function CheckIfUserWon(state) {
+  if (isQuestionAnswerCorrect(state.puzzleQuestion)) {
+    state = {
+      ...state,
+      puzzleComplete: true,
+      puzzleQuestion: setAllBricksToVisible(state.puzzleQuestion),
+    };
+  }
+  return state;
+}
+
+function isQuestionAnswerCorrect(puzzleQuestion) {
+  return puzzleQuestion.every(
+    (brick) => brick.actualPosition === brick.currentPosition
+  );
+}
+
+function setAllBricksToVisible(puzzleQuestion) {
+  return puzzleQuestion.map((brick) => ({...brick, visible: true}));
 }

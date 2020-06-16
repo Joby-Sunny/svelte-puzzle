@@ -7,7 +7,7 @@ export function setUserPuzzle(state, payload) {
     puzzleImage: payload.title,
     puzzleSource: payload.sourceImage,
     puzzleQuestion: setCurrentBrickPosition(
-      shuffleBricks(setPayloadQuestion(payload))
+      setPayloadQuestion(payload)
     ),
   };
 }

@@ -1,12 +1,6 @@
 .brick-selected img {
     position: relative;
     z-index: 2;
-    background-color: palegoldenrod;
     outline: 65px solid rgba(255,255,255,0.5);
-    outline-offset: -65px;
-}
-
-.brick-hidden {
-    outline: 65px solid rgba(116, 255, 166, 0.7);
     outline-offset: -65px;
 }
