@@ -20,7 +20,7 @@
       {#if $store.puzzleId}
         <div class="question-grid grid gap-0 grid-cols-4">
           {#each puzzleQuestion as brick}
-            <PuzzleBrick bind:brick />
+            <PuzzleBrick {brick} />
           {/each}
         </div>
       {:else}
