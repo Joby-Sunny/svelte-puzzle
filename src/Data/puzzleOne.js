@@ -22,14 +22,14 @@ export const PuzzleOne = {
   sourceImage,
   imageFragments: [
     {
-      actualPosition: 14,
-      id: '00f78b1a-c562-4ccf-bf36-f665cab20396',
-      src: image14,
+      actualPosition: 2,
+      id: '5137a9c0-9486-4696-83ec-c817c47f0a02',
+      src: image2,
     },
     {
-      actualPosition: 1,
-      id: '05fbf5a4-1899-4087-abc3-6db4895bc774',
-      src: image1,
+      actualPosition: 11,
+      id: '853adb63-0259-4ebc-98a1-75bb51629956',
+      src: image11,
     },
     {
       actualPosition: 10,
@@ -37,24 +37,14 @@ export const PuzzleOne = {
       src: image10,
     },
     {
-      actualPosition: 3,
-      id: 'ea6ece5c-50cb-4ef1-99a3-db34ceb070c5',
-      src: image3,
+      actualPosition: 7,
+      id: 'b65c2876-e8e4-4de6-b161-c2c59797e080',
+      src: image7,
     },
     {
-      actualPosition: 13,
-      id: 'bcf98697-52f7-4d00-b7a5-056a692ad7f6',
-      src: image13,
-    },
-    {
-      actualPosition: 4,
-      id: '710248bb-feef-4c98-b944-4bd5a6250e16',
-      src: image4,
-    },
-    {
-      actualPosition: 9,
-      id: 'd7bf675d-85a0-4ab0-a900-c739b5481f0c',
-      src: image9,
+      actualPosition: 1,
+      id: '05fbf5a4-1899-4087-abc3-6db4895bc774',
+      src: image1,
     },
     {
       actualPosition: 8,
@@ -62,9 +52,19 @@ export const PuzzleOne = {
       src: image8,
     },
     {
-      actualPosition: 7,
-      id: 'b65c2876-e8e4-4de6-b161-c2c59797e080',
-      src: image7,
+      actualPosition: 9,
+      id: 'd7bf675d-85a0-4ab0-a900-c739b5481f0c',
+      src: image9,
+    },
+    {
+      actualPosition: 14,
+      id: '00f78b1a-c562-4ccf-bf36-f665cab20396',
+      src: image14,
+    },
+    {
+      actualPosition: 0,
+      id: '5103677e-408e-488b-b2a7-716d014b0e91',
+      src: image0,
     },
     {
       actualPosition: 6,
@@ -77,29 +77,30 @@ export const PuzzleOne = {
       src: image5,
     },
     {
-      actualPosition: 11,
-      id: '853adb63-0259-4ebc-98a1-75bb51629956',
-      src: image11,
+      actualPosition: 13,
+      id: 'bcf98697-52f7-4d00-b7a5-056a692ad7f6',
+      src: image13,
     },
     {
-      actualPosition: 2,
-      id: '5137a9c0-9486-4696-83ec-c817c47f0a02',
-      src: image2,
+      actualPosition: 15,
+      id: '55767d8b-3d8e-491a-b7a7-7054524a906c',
+      src: image15,
     },
+
     {
       actualPosition: 12,
       id: 'b7400bc7-76fb-42d5-b52a-f65812a6bb31',
       src: image12,
     },
     {
-      actualPosition: 0,
-      id: '5103677e-408e-488b-b2a7-716d014b0e91',
-      src: image0,
+      actualPosition: 4,
+      id: '710248bb-feef-4c98-b944-4bd5a6250e16',
+      src: image4,
     },
     {
-      actualPosition: 15,
-      id: '55767d8b-3d8e-491a-b7a7-7054524a906c',
-      src: image15,
+      actualPosition: 3,
+      id: 'ea6ece5c-50cb-4ef1-99a3-db34ceb070c5',
+      src: image3,
     },
   ],
 };
