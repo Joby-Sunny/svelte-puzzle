@@ -22,7 +22,7 @@
     "tailwindcss": "^1.4.6"
   },
   "dependencies": {
-    "moment": "^2.26.0",
+    "moment": "^2.29.4",
     "sirv-cli": "^0.4.4",
     "svelte-spa-router": "^2.2.0"
   }
